@@ -378,3 +378,66 @@ Nos devuelve a la pantalla de configuración y nos muestra nuestra key creada, t
 ![image](https://user-images.githubusercontent.com/54609399/137610362-de3ee25e-664a-43a1-ba32-87a1d06f9d2f.png)
 
 Con esto ya tenemos la llave generada en GIT y enlazada con GITHUB
+
+</details>
+________________________________________
+
+***
+<details><summary>SUBIR PRIMER REPOSITORIO A GITHUB</summary>
+***
+________________________________________
+
+```
+git status:
+```
+Este comando te muestra el estado actual de tu repositorio Git. Te muestra los archivos que han sido modificados, añadidos o eliminados desde el último commit. Es una buena práctica ejecutar este comando con regularidad para tener una idea de qué cambios están listos para ser comprometidos.
+
+```
+git init:
+```
+Este comando se utiliza para inicializar un nuevo repositorio Git en un directorio. Crea una estructura básica de repositorio que incluye una carpeta oculta .git que contiene toda la información sobre la historia y configuración del repositorio.
+
+```
+git status (segundo uso):
+```
+Después de ejecutar git init, puedes usar git status nuevamente para ver el estado del repositorio recién inicializado. En este punto, deberías ver que no hay cambios pendientes para ser confirmados, ya que es un repositorio nuevo y aún no has realizado cambios en él.
+
+```
+git remote add origin <url_ssh_del_repo>:
+```
+Este comando establece una conexión remota entre tu repositorio local y un repositorio remoto en GitHub (u otro servicio compatible). El nombre "origin" es un alias que se utiliza comúnmente para el repositorio remoto principal. La URL SSH es la dirección del repositorio remoto al que quieres conectarte.
+
+```
+git fetch origin main:
+```
+git fetch recupera todos los cambios nuevos del repositorio remoto, pero no los aplica en tu rama actual. origin es el nombre del repositorio remoto, y main es el nombre de la rama en el repositorio remoto desde la que quieres traer cambios. Esto asegura que estás al día con los cambios realizados por otros colaboradores en la rama main.
+
+```
+git pull origin main:
+```
+git pull es similar a git fetch, pero también fusiona los cambios en tu rama actual. En este caso, estás sacando los cambios de la rama main del repositorio remoto origin y los fusionas con tu rama local actual.
+
+```
+git add .:
+```
+Agrega los cambios realizados en tus archivos al área de preparación (staging area). El punto (.) indica que quieres agregar todos los archivos modificados en el directorio actual.
+
+```
+git status (tercer uso):
+```
+Ahora, después de agregar los cambios con git add, puedes ver que los archivos están en el área de preparación y están listos para ser confirmados.
+
+```
+git commit -m "Primer commit":
+```
+Confirma los cambios en el área de preparación y crea un nuevo commit en la historia del repositorio. El mensaje después de -m es una descripción breve y significativa del cambio que has realizado en este commit.
+
+```
+git push -u origin main:
+```
+Este comando empuja tus commits locales a la rama main del repositorio remoto origin. El parámetro -u establece la rama main como la rama upstream (rama principal de seguimiento), lo que significa que en futuros git push solo necesitarás escribir git push sin especificar la rama y Git sabrá a dónde empujar los cambios.
+
+
+
+</details>
+________________________________________
